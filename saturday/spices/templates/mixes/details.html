@@ -1,0 +1,7 @@
+
+<h1>Spice details for the Mix: {{ spice_mix.spice_mix_name }}</h1>
+<ul>
+{% for spice in spice_mix.spice_set.all %}
+    <li><a href="/spices/spice/{{ spice.id }}/">{{ spice.spice_name }}</a> : {{spice.spice_flavour_profile}}</li>
+{% endfor %}
+</ul>

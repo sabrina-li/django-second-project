@@ -1,0 +1,35 @@
+<h1>Add a spice mix</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/spices/add_post" method="post">
+    {% csrf_token %}
+    <label for="spice_mix_name">New Mix:</label>
+    <input type="text" name="spice_mix_name" id="spice_mix_name">
+
+    <br>
+    <label>Chose Spice:</label>
+    {% for spice in spices %}
+        <!-- <div>
+            <input type="checkbox" id="{{spice.id}}" name="{{spice.spice_name}}" value="true">
+            <label for="{{spice.spice_name}}">{{spice.spice_name}}</label>
+        </div> -->
+
+        <input type="radio" name="spice" id="spice{{ forloop.counter }}" value="{{ spice.id }}">
+        <label for="spice{{ forloop.counter }}">{{ spice.spice_name }}</label>
+    {% endfor %}
+    <p>Or add a new spice:</p>
+    <label for="spice_name">spice name:</label>
+    <input type="text" name="spice_name" id="spice_name">
+    <br>
+    <label for="spice_flavour_profile">spice flavour profile:</label>
+    <input type="text" name="spice_flavour_profile" id="spice_flavour_profile">
+    <br>
+    <input type="submit" value="submit">
+</form>
+
+<!-- <script>
+$("input:checkbox[name=spices]:checked").each(function(){
+    yourArray.push($(this).val());
+});
+</script> -->

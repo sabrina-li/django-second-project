@@ -1,0 +1,10 @@
+<h1>Here is all your spice mixes!!</h1>
+{% if spice_mix_list %}
+    <ul>
+    {% for spice_mix in spice_mix_list %}
+        <li><a href="/spices/mix/{{ spice_mix.id }}/">{{ spice_mix.spice_mix_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No spice_mix_list are available.</p>
+{% endif %}
