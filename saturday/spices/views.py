@@ -40,7 +40,7 @@ def add(request):
     # return HttpResponse("this is the spice_mix list No. "+ str(spice_mix_id))
     spices = Spice.objects.all()
     context = {'spices': spices}
-    return render(request, 'add.html', context)
+    return render(request, 'mixes/add.html', context)
     # return HttpResponse( output )
 
 def add_post(request):

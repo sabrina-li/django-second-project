@@ -1,3 +1,7 @@
+{% extends "../index.html" %}
+
+{% block content %}
+
 <h1>Here is all your spice mixes!!</h1>
 {% if spice_mix_list %}
     <ul>
@@ -8,3 +12,6 @@
 {% else %}
     <p>No spice_mix_list are available.</p>
 {% endif %}
+
+
+{% endblock %}

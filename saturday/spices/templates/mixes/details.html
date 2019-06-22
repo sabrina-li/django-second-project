@@ -1,3 +1,7 @@
+{% extends "../index.html" %}
+
+
+{% block content %}
 
 <h1>Spice details for the Mix: {{ spice_mix.spice_mix_name }}</h1>
 <ul>
@@ -5,3 +9,6 @@
     <li><a href="/spices/spice/{{ spice.id }}/">{{ spice.spice_name }}</a> : {{spice.spice_flavour_profile}}</li>
 {% endfor %}
 </ul>
+
+
+{% endblock %}
