@@ -1,5 +1,6 @@
 from django.urls import include, path
 from . import views
+app_name = 'spices'
 
 urlpatterns = [
     path('', views.spice_mix_list, name='list'),
